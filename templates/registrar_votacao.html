@@ -2,10 +2,13 @@
 {% load materializecss %}
 {%block conteudo%}
 <script>
-     $(document).ready(function(){
-        $("#id_horario_inicio").addClass('datepicker','timepicker').attr("type","text");       
-        $("#id_horario_termino").addClass('datepicker').attr("type","text");     
-    }); 
+     $(document).ready(function () {
+        $("#id_horario_inicio").attr("type","text");
+        $("#id_horario_termino").attr("type","text");
+        M.AutoInit();
+        var DateField = MaterialDateTimePicker.create($('#id_horario_inicio'))
+        var DateField = MaterialDateTimePicker.create($('#id_horario_termino'))
+    });
 
 </script>
 <main>

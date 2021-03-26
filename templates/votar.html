@@ -1,0 +1,26 @@
+{%extends "base.html"%}
+
+{%block conteudo%}
+
+    <main>
+        <div class="container">
+            <div class="row">
+                <h1>{{objVotacao.nome_completo}}</h1>
+                <form method="POST">
+                    {% csrf_token %}
+                    <p>
+                        {% for q in listOpcaoVoto %}
+                            <label>
+                                <input name="voto" type="radio" value="{{q.id}}" required/>
+                                <span>{{q}}</span>
+                            </label><br>
+                        {% endfor %}                        
+                    </p> 
+                    <button type="submit">enviar</button>                      
+                </form>                
+            </div>
+        </div>
+    </main>
+
+
+{%endblock conteudo%}
